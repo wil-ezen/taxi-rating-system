@@ -1,0 +1,13 @@
+<h1>Enter Taxi's Number Plate</h1>
+
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    Number Plate:<input type="text" name="submitted_number_plate" value="e.g. ABC123GP"><br>
+</form>
+
+{% if submitted_number_plate %}
+    <ul>
+        <h1>{{ submitted_number_plate }}</h1>
+        {{ submitted_number_plate_rating }}
+    </ul>
+{% endif %}
